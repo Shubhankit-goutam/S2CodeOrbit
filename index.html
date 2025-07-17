@@ -4,148 +4,145 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>S² CodeOrbit - Learn JavaScript</title>
+
+  <!-- Bootstrap & Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Poppins:wght@400;600&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- AOS Animation Library -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
 
   <style>
     body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #cdcdcd;
-  color: #212A31;
-}
+      font-family: 'Montserrat', sans-serif;
+      background-color: #cdcdcd;
+      color: #212A31;
+    }
 
-#mainCarousel .carousel-item {
-  height: 40vh;
-  min-height: 200px;
-}
+    #mainCarousel .carousel-item {
+      height: 40vh;
+      min-height: 200px;
+    }
 
-#mainCarousel .carousel-item img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
+    #mainCarousel .carousel-item img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
 
-.navbar {
-  background: linear-gradient(45deg, #b7dcf8, #2E3944);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
+    .navbar {
+      background: linear-gradient(45deg, #b7dcf8, #2E3944);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
 
-.navbar-brand {
-  font-weight: bold;
-  color: #ffffff !important;
-  font-family: 'Russo One', sans-serif;
-  font-size: 1.6rem;
-}
+    .navbar-brand {
+      font-weight: bold;
+      color: #ffffff !important;
+      font-family: 'Russo One', sans-serif;
+      font-size: 1.6rem;
+    }
 
-.nav-link {
-  color: #ffffff;
-  font-weight: 500;
-}
+    .nav-link {
+      color: #ffffff;
+      font-weight: 500;
+    }
 
-.nav-link:hover {
-  color: #748D92;
-}
+    .nav-link:hover {
+      color: #748D92;
+    }
 
-.navbar-logo {
-  width: 90px;
-  height: 75px;
-  object-fit: contain;
-}
+    .navbar-logo {
+      width: 90px;
+      height: 75px;
+      object-fit: contain;
+      transition: transform 0.5s ease;
+    }
 
-.course-box {
-  border: 1px solid #748D92;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
+    .course-box {
+      border: 1px solid #748D92;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      perspective: 1000px;
+      transform-style: preserve-3d;
+    }
 
-.course-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
+    .course-box:hover {
+      transform: rotateY(10deg) scale(1.03);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
 
-.course-box i {
-  font-size: 1.5rem;
-  margin-right: 10px;
-  color: #124E66;
-}
+    .course-box i {
+      font-size: 1.5rem;
+      margin-right: 10px;
+      color: #124E66;
+    }
 
-footer {
-  background: linear-gradient(45deg, #b7dcf8, #2E3944);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  color: #ffffff;
-  padding: 20px;
-  text-align: center;
-}
+    footer {
+      background: linear-gradient(45deg, #b7dcf8, #2E3944);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
 
-h2 {
-  color: #124E66;
-  font-family: 'Russo One', sans-serif;
-}
+    h2 {
+      color: #124E66;
+      font-family: 'Russo One', sans-serif;
+    }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: rgba(33, 42, 49, 0.5);
-  border-radius: 50%;
-  padding: 10px;
-  transition: transform 0.3s ease;
-}
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: rgba(33, 42, 49, 0.5);
+      border-radius: 50%;
+      padding: 10px;
+      transition: transform 0.3s ease;
+    }
 
-.carousel-control-prev:hover .carousel-control-prev-icon,
-.carousel-control-next:hover .carousel-control-next-icon {
-  transform: scale(1.2);
-  background-color: rgba(33, 42, 49, 0.7);
-}
+    .carousel-control-prev:hover .carousel-control-prev-icon,
+    .carousel-control-next:hover .carousel-control-next-icon {
+      transform: scale(1.2);
+      background-color: rgba(33, 42, 49, 0.7);
+    }
 
-.founder-img {
-  max-width: 180px;
-  border-radius: 50%;
-  border: 4px solid #124E66;
-  margin-bottom: 15px;
-}
+    .team-box {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.5s ease, box-shadow 0.3s ease;
+      perspective: 1000px;
+      transform-style: preserve-3d;
+      height: 100%;
+    }
 
-.course-card:hover {
-  transform: translateY(-5px);
-  transition: 0.3s;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
+    .team-box:hover {
+      transform: rotateY(-10deg) scale(1.02);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
 
-.team-box {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%;
-}
+    .team-box img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 4px solid #748D92;
+    }
 
-.team-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-}
+    .btn-primary {
+      background-color: #124E66;
+      border-color: #124E66;
+    }
 
-.team-box img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 15px;
-  border: 4px solid #748D92;
-}
-
-.btn-primary {
-  background-color: #124E66;
-  border-color: #124E66;
-}
-
-.btn-primary:hover {
-  background-color: #0f3e54;
-  border-color: #0f3e54;
-}
+    .btn-primary:hover {
+      background-color: #0f3e54;
+      border-color: #0f3e54;
+    }
 
   </style>
 </head>
@@ -196,37 +193,37 @@ h2 {
   <section class="container py-5" id="courses">
     <h2 class="mb-4 text-center">🚀 Our Courses</h2>
     <div class="row g-4">
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="flip-left">
         <div class="course-box">
           <h4><i class="fas fa-code"></i> JavaScript for Beginners</h4>
           <p>Start your coding journey with interactive tutorials, beginner-friendly logic, and real-world examples.</p>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="flip-right">
         <div class="course-box">
           <h4><i class="fab fa-node-js"></i> Node.js Mastery</h4>
           <p>Learn to build scalable backend applications using Express, MongoDB, REST APIs and deployment practices.</p>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="flip-left">
         <div class="course-box">
           <h4><i class="fas fa-paint-brush"></i> Frontend Projects</h4>
           <p>Hands-on HTML, CSS, and JavaScript projects like weather apps, calculators, and portfolio sites.</p>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="flip-up">
         <div class="course-box">
           <h4><i class="fab fa-react"></i> React.js Essentials</h4>
           <p>Get started with components, state management, and build dynamic user interfaces with React.</p>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="flip-down">
         <div class="course-box">
           <h4><i class="fas fa-code-branch"></i> TypeScript Basics</h4>
           <p>Strengthen your JavaScript with types, interfaces, and tooling using TypeScript.</p>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4" data-aos="flip-right">
         <div class="course-box">
           <h4><i class="fas fa-database"></i> MongoDB + Mongoose</h4>
           <p>Master database design, queries, and schema modeling for modern applications.</p>
@@ -239,12 +236,12 @@ h2 {
   <section class="container py-5" id="videos">
     <h2 class="mb-4 text-center">🎥 Watch Our Videos</h2>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6" data-aos="zoom-in">
         <div class="ratio ratio-16x9">
           <iframe src="https://www.youtube.com/embed/TlB_eWDSMt4" title="Intro Video" allowfullscreen></iframe>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6" data-aos="zoom-in" data-aos-delay="300">
         <div class="ratio ratio-16x9">
           <iframe src="https://www.youtube.com/embed/2Ji-clqUYnA" title="JS Video" allowfullscreen></iframe>
         </div>
@@ -253,45 +250,44 @@ h2 {
   </section>
 
   <!-- About -->
-  <section class="container py-5" id="about">
+  <section class="container py-5" id="about" data-aos="fade-up">
     <h2 class="mb-4 text-center">About S² CodeOrbit</h2>
     <p class="text-center">I'm Shubhankit, passionate about teaching programming in Hindi. Learn JavaScript, Node.js and build your tech career with real-world examples and friendly explanations.</p>
   </section>
 
-   <!-- Team Section -->
+  <!-- Team Section -->
   <section class="container py-5" id="team">
     <h2 class="text-center mb-4 text-dark">👨‍💻 Our Team</h2>
     <div class="row justify-content-center g-4">
-      <div class="col-md-4 d-flex">
-        <div class="team-box text-center animate__animated animate__fadeInUp w-100">
+      <div class="col-md-4 d-flex" data-aos="zoom-in-up">
+        <div class="team-box text-center w-100">
           <img src="./images/dev1.jpg" alt="Shubhankit Gautam" />
           <h5 class="fw-bold mt-3">Shubhankit Gautam</h5>
           <p class="text-muted">👨‍💻 Full Stack Developer</p>
           <p>5+ years experience in MERN stack, REST APIs and scalable architecture.</p>
         </div>
       </div>
-      <div class="col-md-4 d-flex">
-        <div class="team-box text-center animate__animated animate__fadeInUp animate__delay-1s w-100">
+      <div class="col-md-4 d-flex" data-aos="zoom-in-up" data-aos-delay="300">
+        <div class="team-box text-center w-100">
           <img src="./images/dev4.jpg" alt="Saher Sood" />
-          <h5 class="fw-bold mt-3">Saher Sood </h5>
+          <h5 class="fw-bold mt-3">Saher Sood</h5>
           <p class="text-muted">👩‍💻 Frontend Developer</p>
-          <p>5+ years experience in Frontend Developer & React.js and UI/UX expert. Loves crafting pixel-perfect user experiences.</p>
+          <p>5+ years experience in React.js and UI/UX. Loves crafting pixel-perfect user experiences.</p>
         </div>
       </div>
-      <div class="col-md-4 d-flex">
-        <div class="team-box text-center animate__animated animate__fadeInUp animate__delay-2s w-100">
+      <div class="col-md-4 d-flex" data-aos="zoom-in-up" data-aos-delay="600">
+        <div class="team-box text-center w-100">
           <img src="./images/dev3.jpg" alt="Shahnoor" />
           <h5 class="fw-bold mt-3">Shahnoor</h5>
           <p class="text-muted">👨‍💻 Backend Developer</p>
-          <p>5+ years experience in MERN stack & Deep understanding of Node.js, microservices, and MongoDB optimization.</p>
+          <p>5+ years experience in MERN stack & Node.js, microservices, and MongoDB optimization.</p>
         </div>
       </div>
     </div>
   </section>
 
-
   <!-- Contact -->
-  <section class="container py-5" id="contact">
+  <section class="container py-5" id="contact" data-aos="fade-up">
     <h2 class="mb-4 text-center">📬 Contact Us</h2>
     <form class="mx-auto" style="max-width: 600px;">
       <div class="mb-3">
@@ -315,7 +311,14 @@ h2 {
     <p>&copy; 2025 S² CodeOrbit. All rights reserved. | Follow us on YouTube!</p>
   </footer>
 
-  <!-- Bootstrap JS (must be last) -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+      once: true,
+    });
+  </script>
 </body>
 </html>
