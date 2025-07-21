@@ -359,33 +359,42 @@
       <div class="col-md-4 d-flex" data-aos="zoom-in-up" data-aos-delay="600">
         <div class="team-box text-center w-100">
           <img src="./images/dev3.jpg" alt="Shahnoor" />
-          <h5 class="fw-bold mt-3">Shahnoor</h5>
+          <h5 class="fw-bold mt-3">Pawan Beta</h5>
           <p class="text-muted">👨‍💻 Backend Developer</p>
           <p>5+ years experience in MERN stack & Node.js, microservices, and MongoDB optimization.</p>
         </div>
       </div>
+      
     </div>
   </section>
 
   <!-- Contact -->
-  <section class="container py-5" id="contact" data-aos="fade-up">
-    <h2 class="mb-4 text-center">📬 Contact Us</h2>
-    <form class="mx-auto" style="max-width: 600px;">
-      <div class="mb-3">
-        <label for="name" class="form-label">Your Name</label>
-        <input type="text" class="form-control" id="name" required>
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="email" required>
-      </div>
-      <div class="mb-3">
-        <label for="message" class="form-label">Message</label>
-        <textarea class="form-control" id="message" rows="4" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Send</button>
-    </form>
-  </section>
+<section class="container py-5" id="contact" data-aos="fade-up">
+  <h2 class="mb-4 text-center">📬 Contact Us</h2>
+  <form class="mx-auto" style="max-width: 600px;" action="https://formsubmit.co/shubhankitkumar@gmail.com" method="POST">
+    <div class="mb-3">
+      <label for="name" class="form-label">Your Name</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="mb-3">
+      <label for="message" class="form-label">Message</label>
+      <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+    </div>
+
+    <!-- ✅ Redirect to your homepage after submission -->
+    <input type="hidden" name="_next" value="https://shubhankit-goutam.github.io/S2CodeOrbit/">
+
+    <!-- Anti-spam hidden field -->
+    <input type="text" name="_honey" style="display:none">
+
+    <button type="submit" class="btn btn-primary">Send</button>
+  </form>
+</section>
+
 
   <!-- Footer -->
   <footer>
