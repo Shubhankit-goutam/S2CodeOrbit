@@ -385,6 +385,13 @@
     </div>
     <button type="submit" class="btn btn-primary">Send</button>
   </form>
+<!-- <form id="contact-form" action="https://script.google.com/macros/s/AKfycbww2SvigkjAR4dn_NLSUEAUwbkVvEQ5kWO5n-aBLlzBOmQc_QvQBV8psa9CHeuHuO23vQ/exec" method="POST">
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Your Email" required />
+  <textarea name="message" placeholder="Your Message" required></textarea>
+  <button type="submit">Send</button>
+</form> -->
+
 </section>
   <!-- Footer -->
   <footer>
@@ -429,30 +436,29 @@
         toggleButton.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
     });
 
-    document.getElementById("contact-form").addEventListener("submit", function (e) {
-      e.preventDefault();
+ document.getElementById("contact-form").addEventListener("submit", function (event) {
+    event.preventDefault();
 
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
+    const form = event.target;
+    const formData = new URLSearchParams(new FormData(form));
 
-      fetch("https://script.google.com/macros/s/AKfycbwt9UXi0SM5wLittCafnWBd3fd5ceFNar_w9VMzcQVYNMDmPuICK-lWmHjOEQco8aBv9Q/exec", { // 👈 Replace this with your Apps Script URL
-        method: "POST",
-        body: JSON.stringify({ name, email, message }),
-        headers: {
-          "Content-Type": "application/json"
-        }
-      })
-      .then(res => res.json())
-      .then(response => {
-        alert("✅ Message sent successfully!");
-        window.location.href = "https://shubhankit-goutam.github.io/S2CodeOrbit/";
-      })
-      .catch(error => {
-        alert("❌ Something went wrong.");
-        console.error(error);
-      });
+    fetch(form.action, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: formData.toString()
+    })
+    .then(() => {
+      alert("✅ Message sent successfully!");
+      form.reset();
+    })
+    .catch((err) => {
+      alert("❌ Failed to send message.");
+      console.error(err);
     });
+  });
+
   </script>
 </body>
 </html>
